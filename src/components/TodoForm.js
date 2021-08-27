@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TodoForm = ({ todos, setTodos, inputText, setInputText, setStatus }) => {
-
+    // console.log('TodoForm');
     const handleInput = (e) => {
         setInputText(e.target.value)
     }
@@ -20,6 +20,9 @@ const TodoForm = ({ todos, setTodos, inputText, setInputText, setStatus }) => {
     }
     return (
         <>
+        <header>
+            <p>Todo List</p>
+        </header>
         <form>
             <div>
             <input className="todo-input" value={inputText} onChange={handleInput} type='text' />
@@ -39,4 +42,4 @@ const TodoForm = ({ todos, setTodos, inputText, setInputText, setStatus }) => {
     )
 }
 
-export default TodoForm;
+export default React.memo(TodoForm);

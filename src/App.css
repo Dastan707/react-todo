@@ -28,6 +28,7 @@ form button {
   border: none;
   background: white;
 }
+
 form button {
   color: #ff6f47;
   background: #f7fffe;
@@ -43,6 +44,7 @@ form button:hover {
   justify-content: center;
   align-items: center;
 }
+
 
 .todo-list {
   min-width: 30%;

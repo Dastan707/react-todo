@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const Todo = ({ title, todos, setTodos, todo }) => {
+    // console.log("Todo");
     const [editingText, setEditingText] = useState('');
     const [editingTodo, setEditingTodo] = useState(null);
     
@@ -62,14 +63,9 @@ const Todo = ({ title, todos, setTodos, todo }) => {
                 <i className="tiny material-icons">edit</i>
             </button>)}
 
-            {editingTodo === todo.id ? 
-            (<button onClick={() => editHandler(todo.id)}>
-                <i className="tiny material-icons">done</i>
-            </button>) 
-            : 
-            ( <button onClick={completedHandler}>
-                <i className="tiny material-icons">done</i>
-            </button>)}
+             <button onClick={completedHandler}>
+                <i className="tiny material-icons">check_circle</i>
+            </button>
            
             <button className='buttons' onClick={importantHandler}>
             <i className="tiny material-icons">stars</i>
@@ -78,4 +74,4 @@ const Todo = ({ title, todos, setTodos, todo }) => {
     )
 }
 
-export default Todo;
+export default React.memo(Todo) ;
